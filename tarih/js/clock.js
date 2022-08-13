@@ -1,9 +1,11 @@
+let name = window.prompt("Adınız ne?");
 function showTime(){
     let date = new Date();
     let day = "";
     let daysPerMonth = [31, 28 + !(date.getFullYear()%4), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; 
     let totalDays = 337 + daysPerMonth[1];
     let totalPassedDays = 0;
+    
     switch (date.getDay()){
         case 1:
             day = "Pazartesi";
@@ -29,6 +31,7 @@ function showTime(){
         default:
             day = "kodda bir hata var";
     }
+    document.getElementById("myName").innerText = name;
     document.getElementById("myClock").innerText = (date.getHours() < 10 ? "0" + date.getHours():date.getHours())  + ":" + (date.getMinutes() < 10 ? "0" + date.getMinutes():date.getMinutes()) + ":" + (date.getSeconds() < 10 ? "0" + date.getSeconds():date.getSeconds()) + "  " + day;
     document.getElementById("myDate").innerText = (date.getDate() < 10 ? "0" + date.getDate():date.getDate())  + "." + (date.getMonth() < 10 ? "0" + date.getMonth():date.getMonth()) + "." + (date.getFullYear() < 10 ? "0" + date.getFullYear():date.getFullYear());
 
