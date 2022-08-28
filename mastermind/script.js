@@ -26,7 +26,7 @@ function is(array, num, numOfI){
         }    
     });
     return array;
-}
+} 
 
 function os(array, num, numOfO){
     num = String(num).split("");
