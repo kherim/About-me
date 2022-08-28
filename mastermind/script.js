@@ -50,9 +50,18 @@ function hasDuplicates(num) {
 }
 
 function pAdder(x){
+    let div = document.createElement("div") 
     let p = document.createElement("p");
     p.innerHTML = x;
-    text.appendChild(p);
+    div.appendChild(p);
+    text.appendChild(div);
+}
+
+function secondaryMaker() {
+    var element = document.getElementById("game").getElementsByTagName("div");
+    document.getElementById("game").getElementsByTagName("div")[element.length-1].classList.add("secondary");
+    document.getElementById("game").getElementsByTagName("div")[element.length-2].classList.add("secondary");
+    document.getElementById("game").getElementsByTagName("div")[element.length-3].classList.add("secondary");
 }
 
 let pool = [...Array(10000).keys()];
