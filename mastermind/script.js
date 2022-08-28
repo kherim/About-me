@@ -90,7 +90,7 @@ getValues.addEventListener("click", function(){
         inputI.value = "";
         inputO.value = "";
 
-        pAdder(`on place: ${i} not on place: ${o}`);
+        pAdder(`${i} numbers on correct place. ${o} numbers on incorrect place`);
         pAdder("___________");
         secondaryMaker();
 
