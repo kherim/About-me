@@ -106,6 +106,7 @@ getValues.addEventListener("click", function(){
             number = pool[Math.floor(Math.random()*pool.length)];
             pAdder(repeat + ") " + number);
         }
+
     }
     else{
         inputI.value = "";
