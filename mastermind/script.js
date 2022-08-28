@@ -92,6 +92,7 @@ getValues.addEventListener("click", function(){
 
         pAdder(`yerinde: ${i} yerinde dal: ${o}`);
         pAdder("___________");
+        secondaryMaker();
 
         pool = is(pool, number, i);
         pool = os(pool, number, o);
