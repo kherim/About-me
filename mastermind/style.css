@@ -35,3 +35,7 @@ hr{
 p{
     text-align: center;
 }
+
+.secondary {
+    color: #999;
+}
