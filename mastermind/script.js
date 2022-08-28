@@ -90,7 +90,7 @@ getValues.addEventListener("click", function(){
         inputI.value = "";
         inputO.value = "";
 
-        pAdder(`yerinde: ${i} yerinde dal: ${o}`);
+        pAdder(`on place: ${i} not on place: ${o}`);
         pAdder("___________");
         secondaryMaker();
 
