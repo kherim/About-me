@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #map {
+            height: 600px;
+            /* The height is 400 pixels */
+            width: 100%;
+            /* The width is the width of the web page */
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/ac9b72284e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        
+        function initMap(){
+            //location of istanbul
+            const loc = {lat: 41.015137, lng: 28.979530};
+            //centering istanbul
+            let options = {
+                center: loc,
+                zoom: 2
+            };
+            //map centered at istanbul
+            const map = new google.maps.Map(document.getElementById("map"), options);
+
+            fetch(`https://opensky-network.org/api/states/all`).then(res => res.json()).then(item => {
+                console.log(item["states"].forEach(fligth => addMarker({lat: fligth[6], lng: fligth[5]}, fligth[1])));
+            });
+
+            function addMarker(cor, flightNo){
+                const marker = new google.maps.Marker({
+                position: cor,
+                map: map,
+                icon: 'icon.png'
+                });
+
+                const infoWindow = new google.maps.InfoWindow({
+                    content: flightNo//'<h2>hello</h2>'
+                });
+
+                marker.addListener("click", function(){
+                    infoWindow.open(map,marker);
+                })
+            }
+        }
+
+
+    </script>
+
+    <script async 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvtwb41S_NwzslS73bbJnYZQbFSc8VA5k&callback=initMap">
+    </script>
+</body>
+</html>
