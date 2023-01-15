@@ -7,25 +7,25 @@ function showTime(){
     let totalPassedDays = 0;
     
     switch (date.getDay()){
-        case 1:
+        case 0:
             day = "Pazartesi";
             break;
-        case 2:
+        case 1:
             day = "Salı";
             break;
-        case 3:
+        case 2:
             day = "Öarşamba";
             break;
-        case 4:
+        case 3:
             day = "Perşembe";
             break;
-        case 5:
+        case 4:
             day = "Cuma";
             break;
-        case 6: 
+        case 5: 
             day = "Cumartesi";
             break;
-        case 7:
+        case 6:
             day = "Pazar";
             break
         default:
