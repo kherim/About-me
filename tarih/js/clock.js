@@ -33,7 +33,7 @@ function showTime(){
     }
     document.getElementById("myName").innerText = name;
     document.getElementById("myClock").innerText = (date.getHours() < 10 ? "0" + date.getHours():date.getHours())  + ":" + (date.getMinutes() < 10 ? "0" + date.getMinutes():date.getMinutes()) + ":" + (date.getSeconds() < 10 ? "0" + date.getSeconds():date.getSeconds()) + "  " + day;
-    document.getElementById("myDate").innerText = (date.getDate() < 10 ? "0" + date.getDate():date.getDate())  + "." + (date.getMonth() < 10 ? "0" + date.getMonth():date.getMonth()) + "." + (date.getFullYear() < 10 ? "0" + date.getFullYear():date.getFullYear());
+    document.getElementById("myDate").innerText = (date.getDate() < 10 ? "0" + date.getDate():date.getDate())  + "." + ((date.getMonth()+1) < 10 ? "0" + (date.getMonth()+1):(date.getMonth()+1)) + "." + (date.getFullYear() < 10 ? "0" + date.getFullYear():date.getFullYear());
 
     for(let i = 0; i < date.getMonth(-1); i++){
         totalPassedDays += daysPerMonth[i];
